@@ -44,7 +44,7 @@ popd
 
 # Build libogg, statically
 pushd unpacked/libogg-1.3.4
-./configure --disable-shared --prefix=/usr --libdir=/usr/lib64
+./configure --disable-shared --enable-static --prefix=/usr --libdir=/usr/lib64
 make
 make install
 popd
@@ -66,7 +66,7 @@ popd
 # build sox, statically
 pushd unpacked/sox-14.4.2
 ./configure --disable-shared --enable-static --prefix=$(realpath ../../sox-build) --libdir=/usr/lib64 \
-    --with-mad --with-lame --with-oggvorbis --with-flac --without-oss --without-sndfile
+    --with-mad --with-lame --with-oggvorbis --with-flac --without-oss --without-sndfile --without-png
 make -s
 make install
 popd
