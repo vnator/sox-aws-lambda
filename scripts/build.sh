@@ -66,7 +66,8 @@ popd
 # build sox, statically
 pushd unpacked/sox-14.4.2
 ./configure --disable-shared --enable-static --prefix=$(realpath ../../sox-build) --libdir=/usr/lib64 \
-    --with-mad --with-lame --with-oggvorbis --with-flac --without-oss --without-sndfile --without-png
+    --with-mad --with-lame --with-oggvorbis --with-flac --without-oss --without-sndfile --without-png \
+    --disable-openmp
 make -s
 make install
 popd
